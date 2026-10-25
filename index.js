@@ -41,6 +41,7 @@ app.get("/artclies/:id",async (req,res)=>{
    }
    catch(error){console.log(error)}
 })
-app.listen(300,()=>{
-   console.log("server is connected successesdd")
-})
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("server is running");
+});
