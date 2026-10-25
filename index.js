@@ -1,11 +1,9 @@
-// mongodb+srv://<db_username>:<db_password>@cluster0.3u3i8sl.mongodb.net/
-// "mongodb+srv://omarmohamedfargelsayed_db_user:9uGQQXB86K1nT2s0@cluster0.3u3i8sl.mongodb.net/"
-
+require("dotenv").config();
 const express = require("express");
 const app = express();
  app.use(express.json())
  const mongoose = require("mongoose")
- mongoose.connect("mongodb+srv://omarmohamedfargelsayed_db_user:9uGQQXB86K1nT2s0@cluster0.3u3i8sl.mongodb.net/").then(()=>{
+ mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log(" moongose connected with data base mongo")
  }).catch(
     (error)=>{console.log(error)}
