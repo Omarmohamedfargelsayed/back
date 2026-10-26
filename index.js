@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 
 const express = require("express");
@@ -39,7 +38,7 @@ app.get("/articles", async (req, res) => {
 });
 
 // POST: إضافة مقال جديد
-app.post("/artclies", async (req, res) => {
+app.post("/articles", async (req, res) => {
   try {
     const newArticle = new Article();
 
@@ -55,7 +54,7 @@ app.post("/artclies", async (req, res) => {
 });
 
 // GET: جلب مقال باستخدام ID
-app.get("/artclies/:id", async (req, res) => {
+app.get("/articles/:id", async (req, res) => {
   try {
     const article = await Article.findById(req.params.id);
 
@@ -75,3 +74,8 @@ app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running");
 });
 
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server is running");
+});
+// let a=5
